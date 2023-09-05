@@ -1,0 +1,39 @@
+.image-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  vertical-align: middle;
+}
+.image-icon-sm {
+  width: 20px;
+  height: 20px;
+}
+.image-icon-betting-tips {
+  background-image: url('../../media/betting-tips.png');
+}
+
+.image-icon-game-detail {
+  background-image: url('../../media/game-detail.png');
+}
+
+$medal-periods: (
+  'weekly', 'monthly', 'yearly'
+);
+
+$medal-positions: ('1', '2', '3');
+
+@each $medal-period in $medal-periods {
+  @each $medal-position in $medal-positions {
+    .image-icon-medal-#{$medal-period}-#{$medal-position} {
+      background-image: url('../../media/medal-#{$medal-period}-#{$medal-position}.png');
+    }
+  }
+}
+
+@each $medal-position in $medal-positions {
+  .image-icon-trophy-#{$medal-position} {
+    background-image: url('../../media/trophy-#{$medal-position}.png');
+  }
+}
+

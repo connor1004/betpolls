@@ -1,0 +1,308 @@
+.card {
+  margin-bottom: $spacer;
+
+  .card-header {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-base;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.league-games-card {
+  .card-header {
+    .league-logo {
+      margin-right: 4px;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  .league-games {
+    padding: 0;
+
+    .game-item {
+      transition: background-color .3s;
+      display: block;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $border-color;
+      }
+      &.active:not(:last-child) {
+        border-bottom: 5px solid $border-color;
+      }
+
+      .widget.adsense-widget {
+        margin-bottom: 0;
+      }
+
+      .game-main {
+        margin-bottom: 0;
+        tr {
+          td {
+            @include media-breakpoint-down('xs') {
+              padding: 4px 2px;
+            }
+            @include media-breakpoint-up('xs') {
+              padding: 5px 8px;
+            }
+            &:first-of-type {
+              white-space: nowrap;
+              // width: 100%;
+            }
+            &.team-score {
+              font-weight: $font-weight-bold;
+              border-left: 0 !important;
+              width: 100%;
+              &.loser {
+                font-weight: $font-weight-normal;
+              }
+
+              .team-score-element {
+                width: 10px;
+                display: inline-block;
+                text-align: center;
+              }
+            }
+            border-top: 0;
+            border-bottom: 1px solid rgba($black, 0.1);
+            vertical-align: middle;
+            &.game-start-time {
+              font-weight: $font-weight-bold;
+
+              .vote-error {
+                margin-left: 20px;
+                color: red;
+              }
+            }
+          }
+          &.game-team {
+            td {
+              &:not(:first-of-type) {
+                border-left: 1px solid rgba($black, 0.1);
+              }
+            }
+          }
+          &.game-actions {
+            td {
+              text-align: right;
+              padding: 4px 10px;
+            }
+          }
+        }
+
+        .game-bet-over, .game-bet-under {
+          position: relative;
+          width: 46px;
+          line-height: 30px;
+          color: $white;
+          &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 23px solid transparent;
+            border-right: 23px solid transparent;
+          }
+        }
+        .game-bet-over {
+          background-color: $success;
+          &::before {
+            border-bottom: 10px solid $success;
+            top: -10px;
+          }
+        }
+        .game-bet-under {
+          background-color: $danger;
+          &::before {
+            border-top: 10px solid $danger;
+            bottom: -10px;
+          }
+        }
+      }
+
+      .game-details {
+        display: none;
+        padding: 10px;
+      }
+
+      &.active {
+        background-color: $dark;
+        color: $white;
+
+        .game-details {
+          display: block;
+        }
+
+        .game-actions {
+          display: none;
+        }
+        .game-team {
+          .team-content {
+            display: block;
+          }
+        }
+      }
+
+      .game-team {
+        .team-main {
+          display: flex;
+          align-items: center;
+          &.team-main-has-bets {
+            @include media-breakpoint-down('xs') {
+              // flex-direction: column;
+            }
+          }
+          .team-logo-name {
+            display: flex;
+            align-items: center;
+            .team-logo {
+              margin-right: 4px;
+              img {
+                width: 32px;
+                height: 32px;
+              }
+            }
+  
+            .team-name {
+              font-weight: $font-weight-bold;
+            }
+
+            .team-name.loser {
+              font-weight: $font-weight-normal;
+            }
+          }
+          
+          .team-standing {
+            margin-left: 4px;
+          }
+        }
+      }
+
+      .game-team-content {
+        p {
+          margin-bottom: 0;
+        }
+        .team-content-item {
+          display: flex;
+          white-space: normal;
+          & > *:nth-child(2) {
+            margin-left: 5px;
+            flex: 1;
+          }
+        }
+      }
+
+      .game-content {
+        display: none;
+        p {
+          margin-left: 10px;
+          margin-bottom: 0;
+        }
+      }
+
+      .game-bettings {
+        .game-betting {
+          .game-betting-title {
+            font-weight: $font-weight-bold;
+          }
+
+          .game-betting-case {
+            font-size: 14px;
+            display: flex;
+            .case-title {
+              min-width: 100px;
+              margin-right: 5px;
+            }
+          }
+        }
+
+        &.game-bettings-results {
+          .game-betting {
+            .game-betting-case {
+              .case-value {
+                .progress-bar {
+                  vertical-align: middle;
+                  display: inline-block;
+                  height: 16px;
+                }
+                
+                .progress-value {
+                  font-size: 12px;
+                }
+                .count {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.leaderboard-card {
+  .card-header {
+    .custom-control {
+      padding-left: 25px;
+      .custom-control-label::before, .custom-control-label::after {
+        left: -25px;
+      }
+    }
+  }
+  .pagination {
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  .table {
+    margin-bottom: 0;
+  }
+}
+
+.user-voted-games-card {
+  border: 0;
+
+  .card-body {
+    padding: 0;
+
+    .table {
+      margin-bottom: 0;
+    }
+  }
+
+  .team {
+    padding-bottom: 4px;
+    display: flex;
+    align-items: center;
+
+    .team-logo {
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .team-name {
+      margin-left: 8px;
+
+      &.bold {
+        font-weight: $font-weight-bold;
+      }
+
+      .turn-scores {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.week-selector {
+  width: 290px;
+  @include media-breakpoint-down('xs') {
+    width: 290px;
+  }
+  @include media-breakpoint-up('sm') {
+    width: 400px;
+  }
+  display: block;
+  .week-selector-description {
+    font-size: $font-size-sm;
+    display: flex;
+    justify-content: space-between;
+  }
+  .week-selector-main {
+    display: flex;
+    align-items: center;
+    .slick-arrow {
+      cursor: pointer;
+      width: 24px;
+      height: 46px;
+      border: 1px solid $border-color;
+      background-color: $gray-100;
+      color: transparent;
+      outline: 0;
+      position: relative;
+      &:after {
+        position: absolute;
+        color: $primary;
+        top: 50%;
+        margin-top: -13px;
+        left: 50%;
+        margin-left: -4px;
+      }
+      &.slick-prev {
+        &:after {
+          content: "«";
+        }
+      }
+      &.slick-next {
+        &:after {
+          content: "»"
+        }
+      }
+    }
+    
+    .week-selector-block-inner {
+      display: flex;
+    }
+    .week-selector-block-item {
+      cursor: pointer;
+      text-align: center;
+      margin: 0 2px;
+      width: 50px;
+      height: 46px;
+      border: 1px solid $border-color;
+      background-color: $gray-100;
+      &.active {
+        color: $orange;
+      }
+      font-size: $font-size-sm;
+      .weekday {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .day {
+
+      }
+    }
+  }
+}

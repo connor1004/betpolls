@@ -1,0 +1,47 @@
+@each $heading, $heading-info in $heading-maps {
+  #{$heading} {
+    @each $key, $value in $heading-info {
+      #{$key}: $value;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $heading, $heading-info in $heading-maps {
+      .#{$heading}#{$infix} {
+        @each $key, $value in $heading-info {
+          #{$key}: $value;
+        }
+      }
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    @each $heading, $heading-info in $heading-extended-maps {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      .#{$heading}#{$infix}-extended {
+        @each $key, $value in $heading-info {
+          #{$key}: $value;
+        }
+      }
+    }
+  }
+}
+
+@each $key, $info in $font-size-maps {
+  .font-size-#{$key} {
+    @each $key, $value in $info {
+      #{$key}: $value !important;
+    }
+  }
+}
+
+@each $key, $value in $font-weight-maps {
+  .font-weight-#{$key} {
+    font-weight: $value !important;
+  }
+}

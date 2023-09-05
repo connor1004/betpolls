@@ -1,0 +1,29 @@
+$fa-font-path:        "../../../../node_modules/font-awesome/fonts" !default;
+$flag-icon-css-path:  '../../../../node_modules/flag-icon-css/flags' !default;
+$font-weight-maps: (
+  'light': $font-weight-light,
+  'normal': $font-weight-normal,
+  'bold': $font-weight-bold
+);
+
+$header-z-index: 1000;
+
+$heading-maps: (
+  'h1': ('font-size': $h1-font-size, 'letter-spacing': 0.04px, 'line-height': 1.14),
+  'h2': ('font-size': $h2-font-size, 'letter-spacing': 0.03px, 'line-height': 1.29),
+  'h3': ('font-size': $h3-font-size, 'letter-spacing': 0.03px, 'line-height': 1.29),
+  'h4': ('font-size': $h4-font-size, 'letter-spacing': 0.04px, 'line-height': 1.9),
+  'h5': ('font-size': $h5-font-size, 'letter-spacing': 0.05px, 'line-height': 1.1),
+  'h6': ('font-size': $h6-font-size, 'letter-spacing': 0.02px, 'line-height': 1.5)
+);
+
+$heading-extended-maps: (
+  'h3': ('font-size': $h3-font-size, 'letter-spacing': 0.03px, 'line-height': 1.29),
+);
+
+$font-size-maps: (
+  'xl': ('font-size': ($font-size-base) * 1.25, 'line-height': 1.9),
+  'lg': ('font-size': $font-size-lg, 'line-height': 1.1),
+  'base': ('font-size': $font-size-base, 'line-height': 1.5),
+  'sm': ('font-size': $font-size-sm, 'line-height': 2.16)
+);

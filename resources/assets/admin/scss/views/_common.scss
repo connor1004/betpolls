@@ -1,0 +1,54 @@
+.game-list-item-imported {
+  .Polaris-Card {
+    background-color: #F4F6F8;
+  }
+}
+
+.banner {
+  .Polaris-Thumbnail {
+    width: 100%;
+    &::after {
+      padding-bottom: 0;
+      height: 200px;
+    }
+  }
+}
+
+.banner-part .Polaris-ChoiceList .Polaris-ChoiceList__Choices {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  li {
+    margin-right: 30px;
+  }
+}
+
+.game-bottom-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.upper-label {
+  margin-bottom: 3px;
+  display: block;
+}
+
+.full-width-input {
+  .react-datepicker-wrapper {
+    width: 100%;
+
+    .react-datepicker__input-container {
+      width: 100%;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  .right-age {
+    float: right;
+  }
+}

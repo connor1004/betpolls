@@ -1,0 +1,9 @@
+.Polaris-Card {
+  overflow: inherit !important;
+}
+
+@media (min-width: 65.25em) {
+  .Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--sizeLarge {
+      max-width: 120rem;
+  }
+}

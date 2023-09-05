@@ -1,0 +1,62 @@
+.future-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  .select-container {
+    flex: 1;
+  }
+
+  @include media-breakpoint-down('sm') {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .select-container {
+      flex: 0;
+      width: 100%;
+    }
+  }
+}
+
+.poll-card {
+  .card-header {
+    padding: 8px 12px;
+
+    &.with-action {
+      padding: 4px 4px 4px 12px;
+
+      .action-header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .period {
+          width: 150px;
+        }
+      }
+    }
+  }
+  .card-body {
+    padding: 0;
+
+    table {
+      margin-bottom: 0;
+
+      tbody td {
+        border: none;
+        border-bottom: 1px solid #dee2e6;
+        padding: 5px 8px;
+        
+        a {
+          color: #212529;
+        }
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+}
